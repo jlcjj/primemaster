@@ -1,0 +1,39 @@
+package br.com.project.filter;
+
+import java.io.IOException;
+import java.io.Serializable;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
+
+import org.hibernate.SessionFactory;
+import org.springframework.web.filter.DelegatingFilterProxy;
+
+import br.com.framework.hibernate.session.HibernateUtil;
+
+
+@WebFilter(filterName="conexaoFilter")
+public class FilterOpenSessionInView extends DelegatingFilterProxy implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
+	private static SessionFactory sf;
+	
+	//executado uma unica vez
+	
+	@Override
+	protected void initFilterBean() throws ServletException {
+		
+		sf = HibernateUtil.getSessionFactory();
+		
+	}
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response,
+			FilterChain chain) throws ServletException, IOException {
+
+		chain.doFilter(request, response);
+	}
+}

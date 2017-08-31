@@ -1,0 +1,3 @@
+INDEX VERSION 1.126
+C:\Arquivos\P\Projetos\prime\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1059070148.index
+\primeMaster\src

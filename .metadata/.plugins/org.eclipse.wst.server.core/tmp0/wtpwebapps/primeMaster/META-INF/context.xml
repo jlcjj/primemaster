@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context reloadable="true">
+	<Resource 
+		name="jdbc/datasource" 
+		auth="Container" 
+		type="javax.sql.DataSource"
+		defautAutoCommit = "false"
+		maxActive="50"
+		masxIdle="10"
+		maxWait="10"
+		initialSize="10"
+		driverClassName="oracle.jdbc.OracleDriver"
+		url="jdbc:oracle:thin:@192.168.0.11:1521:SANTIN"
+         username="TESTE"
+         password="TESTE"
+		validationQuery="SELECT 'OK' FROM DUAL"
+		testWhileIdle="true"
+		testOnBorrow="true"
+		numTestsPerEvictionRun="5"
+		timeBetweenEvictionRunsMillis="5000"
+		minEvitableIdleTimeMillis="60000"
+		antiJARLocking="false"
+		antiResourceLocking="false"
+		
+		 />
+
+</Context>

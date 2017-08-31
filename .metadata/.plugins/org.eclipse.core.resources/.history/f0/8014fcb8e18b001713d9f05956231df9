@@ -1,0 +1,9 @@
+package br.com.project.filter;
+
+import javax.servlet.annotation.WebFilter;
+
+
+@WebFilter(filterName="conexaoFilter")
+public class FilterOpenSessionInView {
+
+}
